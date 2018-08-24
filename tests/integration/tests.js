@@ -63,11 +63,19 @@ describe('calculator functionality', function() {
       running_total = element(by.css('#running_total'))
       element(by.css('#number9')).click();
       element(by.css('#operator_subtract')).click();
-        element(by.css('#number9')).click();
-        element(by.css('#number9')).click();
-
-        element(by.css('#operator_equals')).click();
+      element(by.css('#number9')).click();
+      element(by.css('#number9')).click();
+      element(by.css('#operator_equals')).click();
       expect(running_total.getAttribute('value')).to.eventually.equal('-90')
+    })
+
+    it('it should give expected output for a range of numbers__decimals', function(){
+      running_total = element(by.css('#running_total'))
+      element(by.css('#number2')).click();
+      element(by.css('#operator_divide')).click();
+      element(by.css('#number3')).click();
+      element(by.css('#operator_equals')).click();
+      expect(running_total.getAttribute('value')).to.eventually.equal('0.6666666666666666')
     })
 
 
