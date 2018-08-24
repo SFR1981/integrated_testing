@@ -46,6 +46,30 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('128')
   });
 
+  it('it should give expected output for a range of numbers__Very_Large', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number9')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#operator_multiply')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('3.4336838202925124e+30')
+  })
+
+
+    it('it should give expected output for a range of numbers__Negative', function(){
+      running_total = element(by.css('#running_total'))
+      element(by.css('#number9')).click();
+      element(by.css('#operator_subtract')).click();
+        element(by.css('#number9')).click();
+        element(by.css('#number9')).click();
+
+        element(by.css('#operator_equals')).click();
+      expect(running_total.getAttribute('value')).to.eventually.equal('-90')
+    })
+
 
 
 
@@ -56,6 +80,5 @@ describe('calculator functionality', function() {
 // You should write tests to ensure the following requirements are met:
 //
 
-// Can multiple operations be chained together?
 // Is the output as expected for a range of numbers (for example, positive, negative, decimals and very large numbers)?
 // If a number is divided by zero, is the output 'Not a number'? (You will need to modify the Calculator model to meet this requirement).
