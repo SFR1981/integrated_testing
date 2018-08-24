@@ -23,10 +23,18 @@ describe('calculator functionality', function() {
     element(by.css('#number0')).click();
     element(by.css('#number8')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('8008')
-
-
   })
 
+  it('it should update the display with the result of the operation when clicked', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number8')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#number1')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('18')
+
+  });
 
 
 
@@ -35,7 +43,7 @@ describe('calculator functionality', function() {
 //
 // You should write tests to ensure the following requirements are met:
 //
-// Do the number buttons update the display of the running total?
+
 // Do the arithmetical operations update the display with the result of the operation?
 // Can multiple operations be chained together?
 // Is the output as expected for a range of numbers (for example, positive, negative, decimals and very large numbers)?
