@@ -36,7 +36,19 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 3);
   })
 
-  // - `` -
+  it('it should concatenate multiple number button clicks', function(){
+    calculator.numberClick(1);
+    calculator.numberClick(3);
+    assert.strictEqual(calculator.runningTotal, 13);
+
+  })
 
 
 });
+
+//
+// Integration Tests:
+//
+// calculator.numberClick() - concatenate multiple number button clicks
+// calculator.operatorClick() - chain multiple operations together
+// calculator.clearClick() - clear the running total without affecting the calculation
