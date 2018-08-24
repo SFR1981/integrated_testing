@@ -52,11 +52,17 @@ describe('calculator', function () {
 
 })
 
+  it('it should clear the running total without affecting the calculation', function(){
+    calculator.runningTotal = 0;
+    calculator.operatorClick('+');
+    calculator.numberClick(3);
+    calculator.operatorClick('=');
+    calculator.operatorClick('+');
+    calculator.numberClick(5);
+    calculator.clearClick()
+    calculator.operatorClick('=');
+    assert.strictEqual(calculator.runningTotal, 3);
+
+  })
+
 });
-
-//
-// Integration Tests:
-//
-
-// calculator.operatorClick() -
-// calculator.clearClick() - clear the running total without affecting the calculation
