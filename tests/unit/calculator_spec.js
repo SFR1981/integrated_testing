@@ -29,14 +29,14 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 15);
 
   })
-  //
-  //
-  // Unit Tests:
-  //
 
-  // -
-  // - `calculator` -
-  // - `calculator.divide()` - divide 21 by 7 and get 3
+  it('it should divide 21 by 7 and get 3', function(){
+    calculator.previousTotal = 21;
+    calculator.divide(7)
+    assert.strictEqual(calculator.runningTotal, 3);
+  })
+
+  // - `` -
 
 
 });
