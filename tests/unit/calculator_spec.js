@@ -43,12 +43,20 @@ describe('calculator', function () {
 
   })
 
+  it('it should chain multiple operations together', function(){
+    calculator.runningTotal = 2;
+    calculator.operatorClick('+');
+    calculator.operatorClick('+');
+    calculator.operatorClick('+');
+    assert.strictEqual(calculator.runningTotal, 8);
+
+})
 
 });
 
 //
 // Integration Tests:
 //
-// calculator.numberClick() - concatenate multiple number button clicks
-// calculator.operatorClick() - chain multiple operations together
+
+// calculator.operatorClick() -
 // calculator.clearClick() - clear the running total without affecting the calculation
